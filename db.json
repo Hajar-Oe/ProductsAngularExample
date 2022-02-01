@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": 4300,
+      "quantity": 50,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Printer",
+      "price": 1500,
+      "quantity": 50,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Hard Disk",
+      "price": 600,
+      "quantity": 100,
+      "selected": false,
+      "available": true
+    }
+  ]
+}
