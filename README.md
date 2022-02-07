@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WebCatApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# ProductsAngularExample
+>>>>>>> 49526942950cada0ed44f1ceceda63c39217706d
+Angular 13
