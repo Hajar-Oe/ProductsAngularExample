@@ -21,6 +21,7 @@ export class ProductEditComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProduct(this.productId).subscribe(product=>{
       this.productFormGroup=this.fb.group({
+        id:[product.id,Validators.required],
         name:[product.name,Validators.required],
         price:[product.price,Validators.required],
         quantity:[product.quantity,Validators.required],
