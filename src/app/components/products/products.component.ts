@@ -4,6 +4,7 @@ import {Product} from "../../model/product.model";
 import {catchError, map, Observable, of, startWith} from "rxjs";
 import {ActionEvent, AppDataState, DataStateEnum, ProductActionTypes} from "../../state/product.state";
 import {Router} from "@angular/router";
+import {EventDrivenService} from "../../services/event.driven.service";
 
 @Component({
   selector: 'app-products',
@@ -14,9 +15,12 @@ export class ProductsComponent implements OnInit {
   //products: Product[] | null=null;
   products$!:Observable<AppDataState<Product[]>>;
   readonly DataStateEnum=DataStateEnum;
-  constructor(private productsService:ProductsService, private router:Router) { }
+  constructor(private productsService:ProductsService, private router:Router, private eventDrivenServce:EventDrivenService) { }
 
   ngOnInit(): void {
+    this.eventDrivenServce.sourceEventSubjectObservable.subscribe((actionEvent:ActionEvent)=>{
+      this.onActionEvent(actionEvent);
+    });
   }
 
   onGetAllProducts() {
@@ -79,6 +83,7 @@ export class ProductsComponent implements OnInit {
     if(v) {
       this.productsService.deleteProduct(p).subscribe(
         data => {
+          this.eventDrivenServce.publishEvent({type: ProductActionTypes.PRODUCT_DELETED})
           this.onGetAllProducts();
         }
       );
@@ -92,6 +97,7 @@ export class ProductsComponent implements OnInit {
   onEdit(p:Product) {
     this.router.navigateByUrl("/editProduct/"+p.id);
   }
+
   onActionEvent($event: ActionEvent) {
     console.log($event);
     switch ($event.type){

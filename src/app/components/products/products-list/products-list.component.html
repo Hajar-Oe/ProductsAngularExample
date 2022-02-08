@@ -9,11 +9,11 @@
       </div>
     </ng-container>
     <ng-container *ngSwitchCase="DataStateEnum.LOADED">
-      <table class="table">
+      <table class="table table-light">
         <tr>
           <th>Id</th><th>Name</th><th>Price</th><th>Quantity</th><th>Selected</th><th>Available</th>
         </tr>
-        <app-product-item [p]="p" (eventEmitter)="onActionEvent($event)"
+        <app-product-item [p]="p"
                           *ngFor="let p of result.data" style="display: contents;">
         </app-product-item>
       </table>

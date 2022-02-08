@@ -1,12 +1,20 @@
 {
   "products": [
     {
-      "id": 3,
-      "name": "Hard Disk",
-      "price": 600,
-      "quantity": 100,
+      "id": 4,
+      "name": "Product",
+      "price": "10",
+      "quantity": "10",
       "selected": true,
       "available": true
+    },
+    {
+      "name": "Testing",
+      "price": "10000000",
+      "quantity": "32",
+      "selected": true,
+      "available": true,
+      "id": 5
     }
   ]
 }
